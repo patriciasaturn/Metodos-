@@ -1,28 +1,14 @@
 import numpy as np
-def biseccion(a ,b,f,error):
-    while abs(b - a) / 2 > error:
+def biseccion(a ,b,f,e):
+
+    while b-a>=e:
         c=( a + b) / 2
-        if f(a) * f(c) < 0:
-            b = c
-        if  f(b) * f(c) < 0:
-            a = c
-        return c
-def f(x):
-    return x-np.sin(x)
-print(biseccion(-1,2,f,0.0001))
-input()
+        if f(c) == 0:
+            return c
+        else:
+            if  f(a) * f(c) > 0:
+                a = c
+            else:
+                b=c
+    return c
 
-
-
-def biseccion(a ,b,f,error):
-    while abs(b - a) / 2 > error:
-        c=( a + b) / 2
-        if f(a) * f(c) < 0:
-            b = c
-        if  f(b) * f(c) < 0:
-            a = c
-        return c
-def f(x):
-    return x-np.sin(x)
-print(biseccion(-1,2,f,0.0001))
-input()
